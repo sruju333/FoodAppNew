@@ -31,7 +31,7 @@ public class OrderService {
     public ResponseEntity<OrderSaveResponse> saveOrder(OrderSaveRequest orderSaveRequest){
 
         OrderSaveResponse orderSaveResponse = new OrderSaveResponse();
-        User user = usersRepository.findById(orderSaveRequest.getUserId()).orElse(null);
+        User user = usersRepository.findByJwt(orderSaveRequest.getJwt());
         if(user==null){
             orderSaveResponse.setStatus(false);
             orderSaveResponse.setMessage("Invalid user id. User does not exist");
