@@ -41,7 +41,7 @@ public class OrderService {
             orderSaveResponse.setStatus(false);
             orderSaveResponse.setMessage("Invalid user id. Only customers can place orders");
             return new ResponseEntity<>(orderSaveResponse,HttpStatus.UNAUTHORIZED);
-        } else if (orderSaveRequest.getJwt()== user.getJwt()) {
+        } else if (orderSaveRequest.getJwt().equals(user.getJwt())) {
             orderSaveResponse.setStatus(false);
             orderSaveResponse.setMessage("Invalid token");
             return new ResponseEntity<>(orderSaveResponse,HttpStatus.UNAUTHORIZED);
@@ -85,7 +85,7 @@ public class OrderService {
             response.setMessage("Invalid token. User does not exist");
             return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
         }
-        else if(user.getRole()==UserRole.CUSTOMER){
+        else if(user.getRole().equals(UserRole.CUSTOMER)){
             response.setStatus(false);
             response.setMessage("Token.  Customers cannot update order status");
             return new ResponseEntity<>(response,HttpStatus.UNAUTHORIZED);
