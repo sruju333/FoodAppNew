@@ -6,6 +6,7 @@ import com.example.foodapp.model.request.UpdateOrderStatusRequest;
 import com.example.foodapp.model.response.OrderSaveResponse;
 import com.example.foodapp.model.response.Response;
 import com.example.foodapp.service.OrderService;
+import jdk.internal.org.jline.utils.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,7 @@ public class OrderController {
             OrderSaveResponse orderSaveResponse = new OrderSaveResponse();
             orderSaveResponse.setStatus(false);
             orderSaveResponse.setMessage("Error Occurred!. Try Again!"+e.getMessage());
+            Log.info(e.getMessage());
             return new ResponseEntity<OrderSaveResponse>(orderSaveResponse, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
