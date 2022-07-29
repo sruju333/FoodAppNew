@@ -2,10 +2,7 @@ package com.example.foodapp.controller;
 import com.example.foodapp.model.entities.User;
 import com.example.foodapp.model.request.SignUpUserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.example.foodapp.model.request.LoginRequest;
 import com.example.foodapp.model.response.SignUpResponse;
 import com.example.foodapp.service.UserService;
@@ -14,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/user")
 public class UserController {
 

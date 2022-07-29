@@ -24,6 +24,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/restaurant")
 
 public class RestaurantController {
