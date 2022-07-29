@@ -57,6 +57,7 @@ public class ProductService {
         productResponse.setProductImage(product.getProductImage());
         productResponse.setProductName(product.getProductName());
         productResponse.setId(id);
+        productResponse.setRestaurantId(product.getRestaurantId());
         productResponse.setPrice(product.getPrice());
         productResponse.setVeg(product.getVeg());
 

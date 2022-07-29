@@ -12,6 +12,15 @@ public class ProductResponse {
     private Boolean isVeg;
 
     private String productImage;
+    private Long restaurantId;
+
+    public Long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(Long restaurantId) {
+        this.restaurantId = restaurantId;
+    }
 
     public Long getId() {
         return id;
