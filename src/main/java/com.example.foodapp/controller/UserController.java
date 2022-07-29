@@ -50,4 +50,10 @@ public class UserController {
 
         return userService.updateUser(updatedUser);
     }
+
+    @GetMapping("/getUser/{id}")
+    public ResponseEntity<?> getUser(@PathVariable Long id){
+        return ResponseEntity.ok(userService.getUserDetails(id));
+
+    }
 }
