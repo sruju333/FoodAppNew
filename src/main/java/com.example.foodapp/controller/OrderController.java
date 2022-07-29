@@ -24,11 +24,9 @@ public class OrderController {
     OrderService ordersService;
 
     @PostMapping("/place_order")
-    public ResponseEntity<OrderSaveResponse> saveOrder(@RequestBody OrderSaveRequest orderSaveRequest,
-    @RequestHeader(name = "Authorization") String jwt ){
+    public ResponseEntity<OrderSaveResponse> saveOrder(@RequestBody OrderSaveRequest orderSaveRequest){
 
         try{
-            orderSaveRequest.setJwt(jwt);
             return ordersService.saveOrder(orderSaveRequest);
         }
         catch (Exception e){
