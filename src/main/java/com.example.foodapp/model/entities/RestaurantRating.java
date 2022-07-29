@@ -1,9 +1,9 @@
 package com.example.foodapp.model.entities;
 
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
 
 //@Entity
 //@Table(name = "restaurant_ratings")
