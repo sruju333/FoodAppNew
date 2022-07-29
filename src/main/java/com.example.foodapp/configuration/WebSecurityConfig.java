@@ -5,11 +5,15 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
 @EnableWebSecurity
 @Configuration
+@EnableWebMvc
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception{
-        http.csrf().disable();
+        http.csrf().disable().authorizeRequests()
+                .antMatchers("/v2/api-docs").permitAll();
     }
 }
